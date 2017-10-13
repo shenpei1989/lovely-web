@@ -12,8 +12,7 @@ import { IndexRoutingModule } from './index-routing.module';
         CommonModule,
         FormsModule,
         IndexRoutingModule,
-        NgbModule
-    ],
+        NgbModule    ],
     declarations:[
         IndexComponent
     ]

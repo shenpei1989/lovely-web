@@ -1,13 +1,8 @@
-<div>
-    <header>
+<div class="container-fluid" >
+    <header class="header">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">小可爱</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
@@ -17,21 +12,57 @@
                 <li class="nav-item">
                     <a class="nav-link disabled" href="#">Disabled</a>
                 </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
-            </div>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
         </nav>
     </header>
-    <div>
-        <aside>
+    <div class="row">
+        <aside class="col-xs-2">
             <nav class="nav flex-column">
-                <a class="nav-link active" href="#">Active</a>
-                <a class="nav-link" href="#">Link</a>
-                <a class="nav-link" href="#">Link</a>
-                <a class="nav-link disabled" href="#">Disabled</a>
+                <ngb-accordion [closeOthers]="true">
+                    <ngb-panel id="static-1" title="用户权限">
+                            <ng-template ngbPanelContent>
+                                <a class="dropdown-item" href="">用户管理</a>
+                                <a class="dropdown-item" href="">角色管理</a>
+                                <a class="dropdown-item" href="permission">权限管理</a>
+                            </ng-template>
+                    </ngb-panel>
+                    <ngb-panel id="static-2" title="Simple">
+                        <ng-template ngbPanelTitle>
+                                <span>&#9733; <b>Fancy</b> title &#9733;</span>
+                        </ng-template>
+                        <ng-template ngbPanelContent>
+                            <a class="dropdown-item" href="">AA</a>
+                            <a class="dropdown-item" href="">AA</a>
+                            <a class="dropdown-item" href="">aa</a>
+                        </ng-template>
+                    </ngb-panel>
+                </ngb-accordion>
+                <ngb-accordion [closeOthers]="true">
+                        <ngb-panel id="static-1" title="Simple">
+                                <ng-template ngbPanelContent>
+                                    <a class="dropdown-item" href="">AA</a>
+                                    <a class="dropdown-item" href="">aa</a>
+                                    <a class="dropdown-item" href="">a</a>
+                                </ng-template>
+                        </ngb-panel>
+                        <ngb-panel id="static-2" title="Simple">
+                            <ng-template ngbPanelTitle>
+                                    <span>&#9733; <b>Fancy</b> title &#9733;</span>
+                            </ng-template>
+                            <ng-template ngbPanelContent>
+                                <a class="dropdown-item" href="">a</a>
+                                <a class="dropdown-item" href="">a</a>
+                                 <a class="dropdown-item" href="">a</a>
+                            </ng-template>
+                        </ngb-panel>
+                    </ngb-accordion>
+                <a class="nav-link" href="#">link</a>
+                <a class="nav-link" href="#">link</a>
+                <a class="nav-link" href="#">link</a>
             </nav>
         </aside>
         <main>

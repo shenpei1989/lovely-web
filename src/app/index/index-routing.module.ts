@@ -9,7 +9,7 @@ const indexRoutes:Routes=[
         path:'index',
         component:IndexComponent,
         canActivate:[AuthGuard],
-    },
+    }
 ];
 
 @NgModule({
