@@ -6,7 +6,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TreeviewModule } from 'ngx-treeview';
 
 import { PermissionComponent } from './permission.component';
-import { UserRoutingModule } from './user-routing.module';
+import { RoleComponent } from './role.component';
+import { UserComponent } from './user.component';
 
 @NgModule({
     imports:[
@@ -14,10 +15,12 @@ import { UserRoutingModule } from './user-routing.module';
         FormsModule,
         NgbModule,
         TreeviewModule,
-        UserRoutingModule
+        //UserRoutingModule
     ],
     declarations:[
-        PermissionComponent
+        PermissionComponent,
+        RoleComponent,
+        UserComponent
     ],
 
 })

@@ -8,7 +8,7 @@ import { PermissionComponent } from './permission.component'
 const userRoutes:Routes=[
     {
         path:'permission',
-        component:PermissionComponent
+        component:PermissionComponent,
     }
 ];
 

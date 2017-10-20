@@ -20,14 +20,14 @@
         </nav>
     </header>
     <div class="row">
-        <aside class="col-xs-2">
+        <aside class="col-2">
             <nav class="nav flex-column">
                 <ngb-accordion [closeOthers]="true">
                     <ngb-panel id="static-1" title="用户权限">
                             <ng-template ngbPanelContent>
-                                <a class="dropdown-item" href="">用户管理</a>
-                                <a class="dropdown-item" href="">角色管理</a>
-                                <a class="dropdown-item" href="permission">权限管理</a>
+                                <a class="dropdown-item" href="index/user">用户管理</a>
+                                <a class="dropdown-item" href="index/role">角色管理</a>
+                                <a class="dropdown-item" href="index/permission">权限管理</a>
                             </ng-template>
                     </ngb-panel>
                     <ngb-panel id="static-2" title="Simple">
@@ -65,7 +65,7 @@
                 <a class="nav-link" href="#">link</a>
             </nav>
         </aside>
-        <main>
+        <main class="col-10">
             <router-outlet></router-outlet>
         </main>
     </div>

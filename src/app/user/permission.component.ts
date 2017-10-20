@@ -6,14 +6,6 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 import { UserService } from './user.service';
 
-const childrenCategory = new TreeviewItem({
-    text: 'Children', value: 1, collapsed: true, children: [
-        { text: 'Baby 3-5', value: 11 },
-        { text: 'Baby 6-8', value: 12 },
-        { text: 'Baby 9-12', value: 13 }
-    ]
-  });
-
 @Injectable()
 export class ProductTreeviewConfig extends TreeviewConfig {
     hasAllCheckBox = true;
@@ -63,7 +55,7 @@ export class PermissionComponent{
         if(item.children&&item.children.length>0){
             removeFlag=confirm("删除节点，会删除它的所有子节点，确定要删除吗？");
         }else{
-            removeFlag=confirm("确定要删除此权限吗？");
+            removeFlag=confirm("确定要删除此节点吗？");
         }
         if(removeFlag){
             //数据库移除
@@ -110,12 +102,12 @@ export class PermissionComponent{
             });
             let itemList=nodeMap[0];
             this.getItemNode(nodeMap[0],nodeMap);
-            let permissionItemList=[];
-            itemList.forEach(item => {
-                item['collapsed']=true;
-                permissionItemList.push(new TreeviewItem(item));
-            });
-            this.items=permissionItemList;
+            // let permissionItemList=[];
+            // itemList.forEach(item => {
+            //     permissionItemList.push(new TreeviewItem(item));
+            // });
+            //this.items=permissionItemList;
+            this.items=[new TreeviewItem({"text":"root","value":"0","children":nodeMap[0],"collapsed":true})];
         });
     }
 
@@ -128,6 +120,7 @@ export class PermissionComponent{
                 node['disabled']=!node['permissionState'];
                 if(nodeId in nodeMap){
                     node['children']=nodeMap[nodeId];
+                    node['collapsed']=true;
                     this.getItemNode(nodeMap[nodeId],nodeMap);
                 }
             });
